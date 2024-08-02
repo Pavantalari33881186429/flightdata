@@ -52,9 +52,15 @@ public class FlightController {
         } catch (DateTimeParseException e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST); // Invalid date format
         }
-
+        if(source.length()>3&&destination.length()>3) {
         List<Flight> flights = flightService.findFlights(source, destination, date);
         return new ResponseEntity<>(flights, HttpStatus.OK);
+        }
+        else {
+        	List<Flight> flights = flightService.findFlightsByAirportId(source, destination, date);
+        	return new ResponseEntity<>(flights, HttpStatus.OK);
+        }
+        
     }
     
     

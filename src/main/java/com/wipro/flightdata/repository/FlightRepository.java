@@ -11,4 +11,5 @@ import com.wipro.flightdata.entity.Flight;
 public interface FlightRepository extends JpaRepository<Flight, Long> {
     List<Flight> findBySourceAndDestinationAndTravelDate(String source, String destination, Date travelDate);
     List<Flight> findFlightsBySourceAndDestinationAndTravelDate(String source, String destination, LocalDate travelDate);
+    List<Flight> findBySourceAirportAndDestinationAirportAndTravelDate(String sourceAirport, String destinationAirport, LocalDate travelDate);
 }

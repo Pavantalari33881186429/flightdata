@@ -47,6 +47,11 @@ public class FlightServiceImpl implements FlightService {
     public List<Flight> searchFlights(String source, String destination, Date travelDate) {
         return flightRepository.findBySourceAndDestinationAndTravelDate(source, destination, travelDate);
     }
+    
+    @Override
+    public List<Flight> findFlightsByAirportId(String sourceAirport, String destinationAirport, LocalDate travelDate) {
+        return flightRepository.findBySourceAirportAndDestinationAirportAndTravelDate(sourceAirport, destinationAirport, travelDate);
+    }
 
     @Override
     public Flight updateFlight(Long id, Flight flightDetails) {

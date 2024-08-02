@@ -15,4 +15,5 @@ public interface FlightService {
     Flight updateFlight(Long id, Flight flightDetails);
     void deleteFlight(Long id);
     List<Flight> saveFlights(List<Flight> flights);
+	List<Flight> findFlightsByAirportId(String sourceAirport, String destinationAirport, LocalDate travelDate);
 }

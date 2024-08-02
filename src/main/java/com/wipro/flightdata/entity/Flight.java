@@ -18,6 +18,8 @@ public class Flight {
     private String flightName;
     private String source;
     private String destination;
+    private String sourceAirport;
+    private String destinationAirport;
     private double price;
     private LocalDate travelDate;
     private String startTime;
@@ -52,6 +54,18 @@ public class Flight {
 	public void setDestination(String destination) {
 		this.destination = destination;
 	}
+	public String getSourceAirport() {
+		return sourceAirport;
+	}
+	public void setSourceAirport(String sourceAirport) {
+		this.sourceAirport = sourceAirport;
+	}
+	public String getDestinationAirport() {
+		return destinationAirport;
+	}
+	public void setDestinationAirport(String destinationAirport) {
+		this.destinationAirport = destinationAirport;
+	}
 	public double getPrice() {
 		return price;
 	}
@@ -76,20 +90,17 @@ public class Flight {
 	public void setReachTime(String reachTime) {
 		this.reachTime = reachTime;
 	}
-	@Override
-	public String toString() {
-		return "Flight [flightId=" + flightId + ", flightNumber=" + flightNumber + ", flightName=" + flightName
-				+ ", source=" + source + ", destination=" + destination + ", price=" + price + ", travelDate="
-				+ travelDate + ", startTime=" + startTime + ", reachTime=" + reachTime + "]";
-	}
 	public Flight(Long flightId, String flightNumber, String flightName, String source, String destination,
-			double price, LocalDate travelDate, String startTime, String reachTime) {
+			String sourceAirport, String destinationAirport, double price, LocalDate travelDate, String startTime,
+			String reachTime) {
 		super();
 		this.flightId = flightId;
 		this.flightNumber = flightNumber;
 		this.flightName = flightName;
 		this.source = source;
 		this.destination = destination;
+		this.sourceAirport = sourceAirport;
+		this.destinationAirport = destinationAirport;
 		this.price = price;
 		this.travelDate = travelDate;
 		this.startTime = startTime;
@@ -99,6 +110,14 @@ public class Flight {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	@Override
+	public String toString() {
+		return "Flight [flightId=" + flightId + ", flightNumber=" + flightNumber + ", flightName=" + flightName
+				+ ", source=" + source + ", destination=" + destination + ", sourceAirport=" + sourceAirport
+				+ ", destinationAirport=" + destinationAirport + ", price=" + price + ", travelDate=" + travelDate
+				+ ", startTime=" + startTime + ", reachTime=" + reachTime + "]";
+	}
+
 
     // Getters and Setters
     
