@@ -4,7 +4,7 @@ pipeline{
   
   tools{
     maven "MAVEN3"
-	  jdk   "OracleJDK11"
+	  jdk   "OracleJDK17"
   
    }
   
@@ -15,7 +15,7 @@ pipeline{
     stage('Get code from Git'){
        steps{
            
-           git branch: 'main', url: 'https://github.com/Pavantalari33881186429/booking.git'
+           git branch: 'main', url: 'https://github.com/Pavantalari33881186429/flightdata.git'
        }
     }
     
